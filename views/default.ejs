@@ -8,7 +8,7 @@
 <body class="<%= classname %>">
     <% include partials/page/header.ejs %>
         <div class="container">
-            <h2>Welcome</h2>
+            <h2><%= pagetitle %><%= ' '+title %></h2>
             <p>Test View Engine</p>
             <% if(typeof(users) !== 'undefined'){ %>
                 <ul>

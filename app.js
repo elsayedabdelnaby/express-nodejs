@@ -3,6 +3,8 @@ var express = require('express'),
 
 app.set('view engine', 'ejs');
 
+app.locals.pagetitle = 'Awesome Website';
+
 app.get('/', function (req, res) {
     res.render('default', { title: 'Home', classname: 'home', users: ['elsayed', 'alaraby', 'mohamed', 'hassan'] });
 });
