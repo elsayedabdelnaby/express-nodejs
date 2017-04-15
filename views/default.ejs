@@ -1,20 +1,27 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
-<head></head>
+<head>
+    <% include partials/page/head.ejs %>
+</head>
 
-<body>
-    <h1>
-        <%=title%>
-    </h1>
-    <h3>Welcome</h3>
-    <p>Test View Engine</p>
-    <ul>
-        <% for(var i = 0; i < users.length; i++){ %>
-            <li>
-                <%= users[i] %>
-            </li>
-            <% } %>
-    </ul>
+<body class="<%= classname %>">
+    <% include partials/page/header.ejs %>
+        <div class="container">
+            <h2>Welcome</h2>
+            <p>Test View Engine</p>
+            <% if(typeof(users) !== 'undefined'){ %>
+                <ul>
+                    <% for(var i = 0; i < users.length; i++){ %>
+                        <li>
+                            <%= users[i] %>
+                        </li>
+                        <% } %>
+                </ul>
+                <% } %>
+        </div>
+        <% include partials/page/footer.ejs %>
+            <% include partials/page/jsdefault.ejs %>
 </body>
 
 </html>

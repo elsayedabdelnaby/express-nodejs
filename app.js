@@ -4,18 +4,15 @@ var express = require('express'),
 app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
-    res.render('default', { title: 'Home', users: ['elsayed', 'alaraby', 'mohamed', 'hassan'] });
+    res.render('default', { title: 'Home', classname: 'home', users: ['elsayed', 'alaraby', 'mohamed', 'hassan'] });
 });
 
 app.get('/home', function (req, res) {
-    res.send('<h1>Hello</h1> Express');
+    res.render('default', { title: 'Home', classname: 'home', users: ['elsayed', 'alaraby', 'mohamed', 'hassan'] });
 });
 
-app.get('/who/:name?/:title?', function (req, res) {
-    var name = req.params.name,
-        title = req.params.title;
-    console.log(req.params);
-    res.send('<p>name: ' + name + '<br>title: ' + title + '</p>');
+app.get('/about', function (req, res) {
+    res.render('default', { title: 'About Us', classname: 'about' });
 });
 
 app.get('*', function (req, res) {
